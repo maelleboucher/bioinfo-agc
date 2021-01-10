@@ -163,36 +163,6 @@ def get_identity(alignment_list):
             count_base += 1
     return count_base / len(alignment_list[0]) * 100
 
-"""
-def chimera_removal(amplicon_file, minseqlen, mincount, chunk_size, kmer_size):
-
-    Take an identity matrix
-    return boolean : True if the target sequence is a chimera,
-    False if the target sequence is not a chimera
-
-    parents = []
-    gen = dereplication_fulllength(amplicon_file, minseqlen, mincount)
-    i = 0
-    for s, c in gen :
-        if i < 2 :
-            parents.append(s)
-            i+=1
-        else :
-            chunks = get_chunks(s, chunk_size)
-            if chunks != None :
-                for chunk in chunks :
-                    kmer_list = []
-                    kmers = cut_kmer(chunk, kmer_size)
-                    for kmer in kmers :
-                        if len(kmer_list) > 8 :
-                            break
-                        else :
-                            for parent in parents:
-                                if kmer in parent:
-                                    kmer_list.append(kmer)
-                    
-"""    
-
 
                
 def chimera_removal(amplicon_file, minseqlen, mincount, chunk_size, kmer_size):
